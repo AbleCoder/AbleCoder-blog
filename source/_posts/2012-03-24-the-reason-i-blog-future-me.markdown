@@ -11,8 +11,8 @@ categories: Monologue
 Well it's official, I'm starting to blog again. Recently I have been getting back into web
 development and in turn spending a lot of time researching and testing new technologies. I have been
 away from web development for under a year (I've been more focused on the Dev and DevOps of my
-company's cross-platform mobile apps for the last 9-months) and its amazing how much new cool shit
-is out. That includes the blogging framework [Octopress](http://octopress.org/) I am using for this
+company's cross-platform mobile apps for the last 11-months) and its amazing how much new cool shit
+is out. That includes the blogging framework [Octopress 2.0](http://octopress.org/) I am using for this
 site.
 
 <!-- more -->
@@ -34,7 +34,7 @@ Future-Me doesn't have to learn it all over again... The slow way.
 Hopefully at some point others will find value in my writings but, until then I am perfectly
 content writing these articles for that bad-ass, good-looking, Future-Me.
 
-### Until Then...
+## Until Then...
 
 No one will see this site (for now anyways) so there is no harm in putting in this _codeblock_ for
 testing purposes.
