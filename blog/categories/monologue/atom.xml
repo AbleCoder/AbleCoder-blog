@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Monologue | Able Coder]]></title>
+  <link href="http://ablecoder.com/blog/categories/monologue/atom.xml" rel="self"/>
+  <link href="http://ablecoder.com/"/>
+  <updated>2012-03-24T03:00:36-07:00</updated>
+  <id>http://ablecoder.com/</id>
+  <author>
+    <name><![CDATA[Brandon Orther]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[The reason I blog: Future-Me]]></title>
+    <link href="http://ablecoder.com/b/2012/03/24/the-reason-i-blog-future-me/"/>
+    <updated>2012-03-24T02:30:00-07:00</updated>
+    <id>http://ablecoder.com/b/2012/03/24/the-reason-i-blog-future-me</id>
+    <content type="html"><![CDATA[<h3>Back To Blogging</h3>
+
+<p>Well it's official, I'm starting to blog again. Recently I have been getting back into web
+development and in turn spending a lot of time researching and testing new technologies. I have been
+away from web development for under a year (I've been more focused on the Dev and DevOps of my
+company's cross-platform mobile apps for the last 9-months) and its amazing how much new cool shit
+is out. That includes the blogging framework <a href="http://octopress.org/">Octopress</a> I am using for this
+site.</p>
+
+<!-- more -->
+
+
+<h3>Blogging For Tomorrow!</h3>
+
+<p><blockquote><p>The older I get the more Future-Me likes the decisions Past-Me makes. In college, I was just an evil asshole to Future-Me.</p><footer><strong>@AbleCoder</strong> <cite><a href='https://twitter.com/#!/AbleCoder/status/183474986961485824'>twitter.com/#!/AbleCoder/status/&hellip;</a></cite></footer></blockquote></p>
+
+<p>As nice as it is to explore all these new projects it can be a time consuming process. A lot of that
+time spent is NOT playing with or testing the new technology, instead it is spent getting it setup.
+I have put many hours into many projects learning how to get a certain technology working. The biggest
+problem I have with all this invested time is that it is more often than not, lost. Just a few weeks
+(or even days in some cases) of not working with a newly learned technology and I am sure to forget
+a lot. This blog is a gift to Future-Me. This blog will document what I already learned so
+Future-Me doesn't have to learn it all over again... The slow way.</p>
+
+<p>Hopefully at some point others will find value in my writings but, until then I am perfectly
+content writing these articles for that bad-ass, good-looking, Future-Me.</p>
+
+<h3>Until Then...</h3>
+
+<p>No one will see this site (for now anyways) so there is no harm in putting in this <em>codeblock</em> for
+testing purposes.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Example CoffeeScript Function Context Binding </span><a href='http://coffeescript.org/#fat_arrow'>Coffee Script - Function binding </a></figcaption> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="nv">Account = </span><span class="nf">(customer, cart) -&gt;</span><span class="o">&lt;/</span><span class="nx">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="vi">@customer = </span><span class="nx">customer</span>
+</span><span class='line'><span class="vi">@cart = </span><span class="nx">cart</span>
+</span><span class='line'>
+</span><span class='line'><span class="nx">$</span><span class="p">(</span><span class="s">&#39;.shopping_cart&#39;</span><span class="p">).</span><span class="nx">bind</span> <span class="s">&#39;click&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&amp;</span><span class="nx">gt</span><span class="p">;</span>
+</span><span class='line'>    <span class="nx">@customer</span><span class="p">.</span><span class="nx">purchase</span> <span class="nx">@cart</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="nx">code</span><span class="o">&gt;&lt;/</span><span class="nx">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
+  
+</feed>
