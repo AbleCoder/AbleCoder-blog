@@ -3,8 +3,8 @@
 # ----------------------- #
 
 url: http://ablecoder.com
-title: AbleCoder
-subtitle: Stay at home software developer promoting comedic code comments and condemning that sloppy pile, PHP.
+title: Able Coder
+subtitle: Wishing PHP was just a bad dream.
 author: Brandon Orther
 simple_search: http://google.com/search
 description: A blog archiving my experiences in software development. The site is setup for public use but I'm betting future-me is gonna be pretty thankful.
@@ -85,7 +85,7 @@ pinboard_user:
 pinboard_count: 3
 
 # Delicious
-delicious_user:
+delicious_user: AbleCoder
 delicious_count: 3
 
 # Disqus Comments
