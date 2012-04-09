@@ -6,7 +6,7 @@ comments: true
 categories: Monologue
 ---
 
-### Back To Blogging
+## Back To Blogging
 
 Well it's official, I'm starting to blog again. Recently I have been getting back into web
 development and in turn spending a lot of time researching and testing new technologies. I have been
@@ -17,7 +17,7 @@ site.
 
 <!-- more -->
 
-### Blogging For Tomorrow!
+## Blogging For Tomorrow!
 
 {% blockquote @AbleCoder https://twitter.com/#!/AbleCoder/status/183474986961485824 %}
 The older I get the more Future-Me likes the decisions Past-Me makes. In college, I was just an evil asshole to Future-Me.
