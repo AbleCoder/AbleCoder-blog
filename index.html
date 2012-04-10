@@ -9,8 +9,8 @@
   <meta name="author" content="Brandon Orther">
 
   
-  <meta name="description" content="Back To Blogging Well it&#8217;s official, I&#8217;m starting to blog again. Recently I have been getting back into web
-development and in turn &hellip;">
+  <meta name="description" content="I have been using Vagrant to manage my local development server VMs. For my development server VMs I add a
+host-only network to allow access to it &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -83,6 +83,59 @@ development and in turn &hellip;">
       
   <header>
     
+      <h1 class="entry-title"><a href="/b/2012/04/09/vagrant-broken-networking-when-packaging-ubuntu-boxes/">Vagrant: Broken Networking When Packaging Ubuntu Boxes</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-04-09T18:25:00-07:00" pubdate data-updated="true">Apr 9<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I have been using Vagrant to manage my local development server VMs. For my development server VMs I add a
+host-only network to allow access to it from a static IP address. Until recently when sharing my development
+environment I would only send people my Vagrantfile and puppet manifests instead of packaging a full blown box
+file. It was clearly a waste of time and bandwidth for others to wait for puppet provisioning to download,
+install and configure each of the required packages so I decided to package my VM into a box file using
+Vagrant&#8217;s <code>package</code> command.</p>
+
+<h2>The Problem: Host-Only Network Broken</h2>
+
+<p>After packaging my VM I tested it using the original Vagrantfile with the <code>config.vm.box</code> updated.
+Right off the bat I realized the host-only network wasn&#8217;t working but the NAT network was working.
+After some investigation it turns out the device name for the host-only network adapter was <code>eth2</code>
+instead of <code>eth1</code> as I would expect.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/b/2012/04/09/vagrant-broken-networking-when-packaging-ubuntu-boxes/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/b/2012/03/24/the-reason-i-blog-future-me/">The Reason I Blog: Future-Me</a></h1>
     
     
@@ -106,7 +159,7 @@ development and in turn &hellip;">
   </header>
 
 
-  <div class="entry-content"><h3>Back To Blogging</h3>
+  <div class="entry-content"><h2>Back To Blogging</h2>
 
 <p>Well it&#8217;s official, I&#8217;m starting to blog again. Recently I have been getting back into web
 development and in turn spending a lot of time researching and testing new technologies. I have been
@@ -137,6 +190,10 @@ site.</p>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/b/2012/04/09/vagrant-broken-networking-when-packaging-ubuntu-boxes/">Vagrant: Broken Networking When Packaging Ubuntu Boxes</a>
+      </li>
     
       <li class="post">
         <a href="/b/2012/03/24/the-reason-i-blog-future-me/">The reason I blog: Future-Me</a>
