@@ -9,8 +9,8 @@
   <meta name="author" content="Brandon Orther">
 
   
-  <meta name="description" content="I have been using Vagrant to manage my local development server VMs. For my development server VMs I add a
-host-only network to allow access to it &hellip;">
+  <meta name="description" content="When packaging my Vagrant virtual enviroment (Ubuntu server with a host-only
+network) to a box file I ran into a problem. The issue was that when I &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -106,26 +106,58 @@ host-only network to allow access to it &hellip;">
   </header>
 
 
-  <div class="entry-content"><p>I have been using Vagrant to manage my local development server VMs. For my development server VMs I add a
-host-only network to allow access to it from a static IP address. Until recently when sharing my development
-environment I would only send people my Vagrantfile and puppet manifests instead of packaging a full blown box
-file. It was clearly a waste of time and bandwidth for others to wait for puppet provisioning to download,
-install and configure each of the required packages so I decided to package my VM into a box file using
-Vagrant&#8217;s <code>package</code> command.</p>
+  <div class="entry-content"><p>When packaging my <a href="http://vagrantup.com/">Vagrant</a> virtual enviroment (Ubuntu server with a host-only
+network) to a box file I ran into a problem. The issue was that when I tried to use that box file the
+host-only network would not work. With a little investigating I realized the problem was caused
+by the device name for the network adapter being <code>eth2</code> instead of <code>eth1</code>.</p>
 
-<h2>The Problem: Host-Only Network Broken</h2>
+<p>Vagrant uses <code>eth1</code> in the host-only network interface defined in the <code>/etc/network/interfaces</code> file
+by default. Since <code>eth1</code> network interface doesn&#8217;t exist (it is <code>eth2</code>) our host-only network does
+not work.</p>
 
-<p>After packaging my VM I tested it using the original Vagrantfile with the <code>config.vm.box</code> updated.
-Right off the bat I realized the host-only network wasn&#8217;t working but the NAT network was working.
-After some investigation it turns out the device name for the host-only network adapter was <code>eth2</code>
-instead of <code>eth1</code> as I would expect.</p>
+<h2>The Cause</h2>
+
+<p>Ubuntu uses <a href="http://wiki.debian.org/udev">udev</a> to dynamically set device names (<code>eth1</code> for example).
+Ubuntu stores persistent udev rules for network devices in the
+<code>/etc/udev/rules.d/70-persistent-net.rules</code> file. Below is the <code>70-persistent-net.rules</code> file from
+the broken host-only network VM.</p>
+
+<figure class='code'><figcaption><span>/etc/udev/rules.d/70-persistent-net.rules</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c"># PCI device 0x8086:0x100e (e1000)</span>
+</span><span class='line'><span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">&quot;net&quot;</span>, <span class="nv">ACTION</span><span class="o">==</span><span class="s2">&quot;add&quot;</span>, <span class="nv">DRIVERS</span><span class="o">==</span><span class="s2">&quot;?*&quot;</span>, ATTR<span class="o">{</span>address<span class="o">}==</span><span class="s2">&quot;08:00:27:57:fd:7b&quot;</span>, ATTR<span class="o">{</span>dev_id<span class="o">}==</span><span class="s2">&quot;0x0&quot;</span>, ATTR<span class="o">{</span><span class="nb">type</span><span class="o">}==</span><span class="s2">&quot;1&quot;</span>, <span class="nv">KERNEL</span><span class="o">==</span><span class="s2">&quot;eth*&quot;</span>, <span class="nv">NAME</span><span class="o">=</span><span class="s2">&quot;eth0&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># PCI device 0x8086:0x100e (e1000)</span>
+</span><span class='line'><span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">&quot;net&quot;</span>, <span class="nv">ACTION</span><span class="o">==</span><span class="s2">&quot;add&quot;</span>, <span class="nv">DRIVERS</span><span class="o">==</span><span class="s2">&quot;?*&quot;</span>, ATTR<span class="o">{</span>address<span class="o">}==</span><span class="s2">&quot;08:00:27:53:22:32&quot;</span>, ATTR<span class="o">{</span>dev_id<span class="o">}==</span><span class="s2">&quot;0x0&quot;</span>, ATTR<span class="o">{</span><span class="nb">type</span><span class="o">}==</span><span class="s2">&quot;1&quot;</span>, <span class="nv">KERNEL</span><span class="o">==</span><span class="s2">&quot;eth*&quot;</span>, <span class="nv">NAME</span><span class="o">=</span><span class="s2">&quot;eth1&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You can see there exists a rule for <code>eth1</code>. The reason the host-only network adapater is assigned
+<code>eth2</code> instead of <code>eth1</code> is because it&#8217;s MAC address doesn&#8217;t match the udev rule. The reason the MAC
+address doesn&#8217;t match is because when Vagrant creates a new VM (from the box file) VirtualBox by
+default generates a random MAC address for that network adapter.</p>
+
+<h2>The Solution</h2>
+
+<p>The solution is to remove the persitant network udev rules immediately before you package the box
+file. This allows network adapters to be assigned device names without any MAC address issues.</p>
+
+<h4>Packaging Steps</h4>
+
+<ol>
+<li><p>SSH into running VM and remove the persistant network udev rules file:</p>
+
+<p> <code>sudo rm /etc/udev/rules.d/70-persistent-net.rules</code></p></li>
+<li><p>Shutdown the VM and package it:</p>
+
+<p> <code>vagrant halt &amp;&amp; vagrant package</code></p></li>
+</ol>
 
 </div>
   
-  
-    <footer>
-      <a rel="full-article" href="/b/2012/04/09/vagrant-broken-networking-when-packaging-ubuntu-boxes/">Read on &rarr;</a>
-    </footer>
   
 
 
