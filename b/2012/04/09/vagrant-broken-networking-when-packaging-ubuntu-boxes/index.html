@@ -9,7 +9,7 @@
   <meta name="author" content="Brandon Orther">
 
   
-  <meta name="description" content="When packaging my Vagrant virtual enviroment (Ubuntu server with a host-only
+  <meta name="description" content="When packaging my Vagrant virtual environment (Ubuntu server with a host-only
 network) to a box file I ran into a problem. The issue was that when I &hellip;">
   
 
@@ -103,14 +103,17 @@ network) to a box file I ran into a problem. The issue was that when I &hellip;"
   </header>
 
 
-<div class="entry-content"><p>When packaging my <a href="http://vagrantup.com/">Vagrant</a> virtual enviroment (Ubuntu server with a host-only
+<div class="entry-content"><p>When packaging my <a href="http://vagrantup.com/">Vagrant</a> virtual environment (Ubuntu server with a host-only
 network) to a box file I ran into a problem. The issue was that when I tried to use that box file the
-host-only network would not work. With a little investigating I realized the problem was caused
-by the device name for the network adapter being <code>eth2</code> instead of <code>eth1</code>.</p>
+host-only network would not work.</p>
 
-<p>Vagrant uses <code>eth1</code> in the host-only network interface defined in the <code>/etc/network/interfaces</code> file
-by default. Since <code>eth1</code> network interface doesn&#8217;t exist (it is <code>eth2</code>) our host-only network does
-not work.</p>
+<p>With a little investigating I realized the problem was caused by the device name for the network
+adapter being <code>eth2</code> instead of <code>eth1</code>. Vagrant uses <code>eth1</code> in the host-only network interface
+defined in the <code>/etc/network/interfaces</code> file. Since <code>eth1</code> network interface doesn&#8217;t
+exist (it is <code>eth2</code>) our host-only network does not work.</p>
+
+<!-- more -->
+
 
 <h2>The Cause</h2>
 

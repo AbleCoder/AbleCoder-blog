@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Networking | Able Coder]]></title>
   <link href="http://ablecoder.com/blog/categories/networking/atom.xml" rel="self"/>
   <link href="http://ablecoder.com/"/>
-  <updated>2012-04-10T20:14:03-07:00</updated>
+  <updated>2012-04-10T20:20:03-07:00</updated>
   <id>http://ablecoder.com/</id>
   <author>
     <name><![CDATA[Brandon Orther]]></name>
@@ -18,14 +18,17 @@
     <link href="http://ablecoder.com/b/2012/04/09/vagrant-broken-networking-when-packaging-ubuntu-boxes/"/>
     <updated>2012-04-09T18:25:00-07:00</updated>
     <id>http://ablecoder.com/b/2012/04/09/vagrant-broken-networking-when-packaging-ubuntu-boxes</id>
-    <content type="html"><![CDATA[<p>When packaging my <a href="http://vagrantup.com/">Vagrant</a> virtual enviroment (Ubuntu server with a host-only
+    <content type="html"><![CDATA[<p>When packaging my <a href="http://vagrantup.com/">Vagrant</a> virtual environment (Ubuntu server with a host-only
 network) to a box file I ran into a problem. The issue was that when I tried to use that box file the
-host-only network would not work. With a little investigating I realized the problem was caused
-by the device name for the network adapter being <code>eth2</code> instead of <code>eth1</code>.</p>
+host-only network would not work.</p>
 
-<p>Vagrant uses <code>eth1</code> in the host-only network interface defined in the <code>/etc/network/interfaces</code> file
-by default. Since <code>eth1</code> network interface doesn't exist (it is <code>eth2</code>) our host-only network does
-not work.</p>
+<p>With a little investigating I realized the problem was caused by the device name for the network
+adapter being <code>eth2</code> instead of <code>eth1</code>. Vagrant uses <code>eth1</code> in the host-only network interface
+defined in the <code>/etc/network/interfaces</code> file. Since <code>eth1</code> network interface doesn't
+exist (it is <code>eth2</code>) our host-only network does not work.</p>
+
+<!-- more -->
+
 
 <h2>The Cause</h2>
 
