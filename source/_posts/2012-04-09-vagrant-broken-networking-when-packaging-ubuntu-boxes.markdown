@@ -11,14 +11,16 @@ categories:
 - udev
 ---
 
-When packaging my [Vagrant](http://vagrantup.com/) virtual enviroment (Ubuntu server with a host-only
+When packaging my [Vagrant](http://vagrantup.com/) virtual environment (Ubuntu server with a host-only
 network) to a box file I ran into a problem. The issue was that when I tried to use that box file the
-host-only network would not work. With a little investigating I realized the problem was caused
-by the device name for the network adapter being `eth2` instead of `eth1`.
+host-only network would not work.
 
-Vagrant uses `eth1` in the host-only network interface defined in the `/etc/network/interfaces` file
-by default. Since `eth1` network interface doesn't exist (it is `eth2`) our host-only network does
-not work.
+With a little investigating I realized the problem was caused by the device name for the network
+adapter being `eth2` instead of `eth1`. Vagrant uses `eth1` in the host-only network interface
+defined in the `/etc/network/interfaces` file. Since `eth1` network interface doesn't
+exist (it is `eth2`) our host-only network does not work.
+
+<!-- more -->
 
 ## The Cause
 
