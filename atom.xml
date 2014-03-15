@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[AbleCoder]]></title>
-  <link href="http://ablecoder.com/atom.xml" rel="self"/>
-  <link href="http://ablecoder.com/"/>
-  <updated>2014-03-15T01:04:12-07:00</updated>
-  <id>http://ablecoder.com/</id>
+  <link href="http://able.cd/atom.xml" rel="self"/>
+  <link href="http://able.cd/"/>
+  <updated>2014-03-15T01:37:58-07:00</updated>
+  <id>http://able.cd/</id>
   <author>
     <name><![CDATA[Brandon Orther]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Rename Default Google Drive Folder]]></title>
-    <link href="http://ablecoder.com/b/2012/05/28/rename-google-drive-default-folder/"/>
+    <link href="http://able.cd/b/2012/05/28/rename-google-drive-default-folder/"/>
     <updated>2012-05-28T15:09:00-07:00</updated>
-    <id>http://ablecoder.com/b/2012/05/28/rename-google-drive-default-folder</id>
+    <id>http://able.cd/b/2012/05/28/rename-google-drive-default-folder</id>
     <content type="html"><![CDATA[<p>After I recently moved all my local software project&#8217;s repos into my Google Drive folder I started
 to notice problems with some of my Vim plug-ins. The problems were due to the fact that the Google
 Drive folder has a space in it. So instead of doing what a good person should probably do and figure
@@ -38,13 +38,13 @@ Drive app and then rename it.</p>
 <p> <code>mv /Users/brandon/Google\ Drive /Users/brandon/GoogleBadassDrive</code></p></li>
 <li><p>Start Google Drive. You should see the below error message.</p>
 
-<p> <img src="http://ablecoder.com/images/b/google-drive-start-error.png" width="353" height="121" title="'Google Drive start up error'" ></p></li>
+<p> <img src="http://able.cd/images/b/google-drive-start-error.png" width="353" height="121" title="'Google Drive start up error'" ></p></li>
 <li><p>Click the Error at the top of the Google Drive menu.</p>
 
-<p> <img src="http://ablecoder.com/images/b/google-drive-menu-error.png" width="388" height="371" title="'Google Drive menu error'" ></p></li>
+<p> <img src="http://able.cd/images/b/google-drive-menu-error.png" width="388" height="371" title="'Google Drive menu error'" ></p></li>
 <li><p>Then hit the &#8220;Locate folder&#8230;&#8221; button.</p>
 
-<p> <img src="http://ablecoder.com/images/b/google-drive-locate-folder.png" width="578" height="216" title="'Google Drive locate folder'" ></p></li>
+<p> <img src="http://able.cd/images/b/google-drive-locate-folder.png" width="578" height="216" title="'Google Drive locate folder'" ></p></li>
 <li><p>Finally select the renamed Google Drive folder and you are back in action.</p></li>
 </ol>
 
@@ -53,9 +53,9 @@ Drive app and then rename it.</p>
   
   <entry>
     <title type="html"><![CDATA[Vagrant: Broken Networking When Packaging Ubuntu Boxes]]></title>
-    <link href="http://ablecoder.com/b/2012/04/09/vagrant-broken-networking-when-packaging-ubuntu-boxes/"/>
+    <link href="http://able.cd/b/2012/04/09/vagrant-broken-networking-when-packaging-ubuntu-boxes/"/>
     <updated>2012-04-09T18:25:00-07:00</updated>
-    <id>http://ablecoder.com/b/2012/04/09/vagrant-broken-networking-when-packaging-ubuntu-boxes</id>
+    <id>http://able.cd/b/2012/04/09/vagrant-broken-networking-when-packaging-ubuntu-boxes</id>
     <content type="html"><![CDATA[<p>When packaging my <a href="http://vagrantup.com/">Vagrant</a> virtual environment (Ubuntu server with a host-only
 network) to a box file I ran into a problem. The issue was that when I tried to use that box file the
 host-only network would not work.</p>
@@ -114,9 +114,9 @@ file. This allows network adapters to be assigned device names without any MAC a
   
   <entry>
     <title type="html"><![CDATA[The reason I blog: Future-Me]]></title>
-    <link href="http://ablecoder.com/b/2012/03/24/the-reason-i-blog-future-me/"/>
+    <link href="http://able.cd/b/2012/03/24/the-reason-i-blog-future-me/"/>
     <updated>2012-03-24T02:30:00-07:00</updated>
-    <id>http://ablecoder.com/b/2012/03/24/the-reason-i-blog-future-me</id>
+    <id>http://able.cd/b/2012/03/24/the-reason-i-blog-future-me</id>
     <content type="html"><![CDATA[<h2>Back To Blogging</h2>
 
 <p>Well it&#8217;s official, I&#8217;m starting to blog again. Recently I have been getting back into web

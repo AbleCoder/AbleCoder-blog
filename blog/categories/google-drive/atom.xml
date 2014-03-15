@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Google Drive | AbleCoder]]></title>
-  <link href="http://ablecoder.com/blog/categories/google-drive/atom.xml" rel="self"/>
-  <link href="http://ablecoder.com/"/>
-  <updated>2014-03-15T01:04:12-07:00</updated>
-  <id>http://ablecoder.com/</id>
+  <link href="http://able.cd/blog/categories/google-drive/atom.xml" rel="self"/>
+  <link href="http://able.cd/"/>
+  <updated>2014-03-15T01:37:58-07:00</updated>
+  <id>http://able.cd/</id>
   <author>
     <name><![CDATA[Brandon Orther]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Rename Default Google Drive Folder]]></title>
-    <link href="http://ablecoder.com/b/2012/05/28/rename-google-drive-default-folder/"/>
+    <link href="http://able.cd/b/2012/05/28/rename-google-drive-default-folder/"/>
     <updated>2012-05-28T15:09:00-07:00</updated>
-    <id>http://ablecoder.com/b/2012/05/28/rename-google-drive-default-folder</id>
+    <id>http://able.cd/b/2012/05/28/rename-google-drive-default-folder</id>
     <content type="html"><![CDATA[<p>After I recently moved all my local software project's repos into my Google Drive folder I started
 to notice problems with some of my Vim plug-ins. The problems were due to the fact that the Google
 Drive folder has a space in it. So instead of doing what a good person should probably do and figure

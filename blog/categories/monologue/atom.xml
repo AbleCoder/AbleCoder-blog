@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Monologue | AbleCoder]]></title>
-  <link href="http://ablecoder.com/blog/categories/monologue/atom.xml" rel="self"/>
-  <link href="http://ablecoder.com/"/>
-  <updated>2014-03-15T01:04:12-07:00</updated>
-  <id>http://ablecoder.com/</id>
+  <link href="http://able.cd/blog/categories/monologue/atom.xml" rel="self"/>
+  <link href="http://able.cd/"/>
+  <updated>2014-03-15T01:37:58-07:00</updated>
+  <id>http://able.cd/</id>
   <author>
     <name><![CDATA[Brandon Orther]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[The reason I blog: Future-Me]]></title>
-    <link href="http://ablecoder.com/b/2012/03/24/the-reason-i-blog-future-me/"/>
+    <link href="http://able.cd/b/2012/03/24/the-reason-i-blog-future-me/"/>
     <updated>2012-03-24T02:30:00-07:00</updated>
-    <id>http://ablecoder.com/b/2012/03/24/the-reason-i-blog-future-me</id>
+    <id>http://able.cd/b/2012/03/24/the-reason-i-blog-future-me</id>
     <content type="html"><![CDATA[<h2>Back To Blogging</h2>
 
 <p>Well it's official, I'm starting to blog again. Recently I have been getting back into web

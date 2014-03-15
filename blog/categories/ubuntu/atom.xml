@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Ubuntu | AbleCoder]]></title>
-  <link href="http://ablecoder.com/blog/categories/ubuntu/atom.xml" rel="self"/>
-  <link href="http://ablecoder.com/"/>
-  <updated>2014-03-15T01:04:12-07:00</updated>
-  <id>http://ablecoder.com/</id>
+  <link href="http://able.cd/blog/categories/ubuntu/atom.xml" rel="self"/>
+  <link href="http://able.cd/"/>
+  <updated>2014-03-15T01:37:58-07:00</updated>
+  <id>http://able.cd/</id>
   <author>
     <name><![CDATA[Brandon Orther]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Vagrant: Broken Networking When Packaging Ubuntu Boxes]]></title>
-    <link href="http://ablecoder.com/b/2012/04/09/vagrant-broken-networking-when-packaging-ubuntu-boxes/"/>
+    <link href="http://able.cd/b/2012/04/09/vagrant-broken-networking-when-packaging-ubuntu-boxes/"/>
     <updated>2012-04-09T18:25:00-07:00</updated>
-    <id>http://ablecoder.com/b/2012/04/09/vagrant-broken-networking-when-packaging-ubuntu-boxes</id>
+    <id>http://able.cd/b/2012/04/09/vagrant-broken-networking-when-packaging-ubuntu-boxes</id>
     <content type="html"><![CDATA[<p>When packaging my <a href="http://vagrantup.com/">Vagrant</a> virtual environment (Ubuntu server with a host-only
 network) to a box file I ran into a problem. The issue was that when I tried to use that box file the
 host-only network would not work.</p>
