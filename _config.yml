@@ -3,11 +3,11 @@
 # ----------------------- #
 
 url: http://ablecoder.com
-title: Able Coder
-subtitle: Wishing PHP was just a bad dream.
+title: AbleCoder
+subtitle: Pursuing efficacy in the art of software development.
 author: Brandon Orther
 simple_search: http://google.com/search
-description: A blog archiving my experiences in software development. The site is setup for public use but I'm betting future-me is gonna be pretty thankful.
+description: A blog archiving my experiences in software development and everything related to it. This site is for public consumption but, I'm betting future-me is going to use it more than most.
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
@@ -59,7 +59,7 @@ default_asides: [asides/recent_posts.html, asides/github.html, asides/twitter.ht
 
 # Github repositories
 github_user:
-github_repo_count: 0
+github_repo_count: 5
 github_show_profile_link: true
 github_skip_forks: true
 
