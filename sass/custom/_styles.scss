@@ -1,22 +1,2 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
-html {
-  background-image: image-url('patterns/use_your_illusion.png');
-  background-image: image-url('patterns/escheresque.png');
-  background-image: image-url('patterns/otis_redding.png');
-  background-image: image-url('patterns/carbon_fibre.png');
-  background-image: image-url('patterns/wild_oliva.png');
-  background-image: image-url('patterns/irongrip.png');
-  background-image: image-url('patterns/dvsup.png');
-}
-body {
-  box-shadow: 0 0 5px #000;
-}
-body > header {
-  background-image: image-url('patterns/navy_blue.png');
-  background-image: image-url('patterns/irongrip.png');
-  background-image: image-url('patterns/hexabump.png');
-}
-body > footer {
-  @include border-bottom-radius(0);
-}
