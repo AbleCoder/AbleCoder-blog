@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Networking | AbleCoder]]></title>
+  <link href="http://ablecoder.com/blog/categories/networking/atom.xml" rel="self"/>
+  <link href="http://ablecoder.com/"/>
+  <updated>2014-03-15T01:04:12-07:00</updated>
+  <id>http://ablecoder.com/</id>
+  <author>
+    <name><![CDATA[Brandon Orther]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Vagrant: Broken Networking When Packaging Ubuntu Boxes]]></title>
+    <link href="http://ablecoder.com/b/2012/04/09/vagrant-broken-networking-when-packaging-ubuntu-boxes/"/>
+    <updated>2012-04-09T18:25:00-07:00</updated>
+    <id>http://ablecoder.com/b/2012/04/09/vagrant-broken-networking-when-packaging-ubuntu-boxes</id>
+    <content type="html"><![CDATA[<p>When packaging my <a href="http://vagrantup.com/">Vagrant</a> virtual environment (Ubuntu server with a host-only
+network) to a box file I ran into a problem. The issue was that when I tried to use that box file the
+host-only network would not work.</p>
+
+<p>With a little investigating I realized the problem was caused by the device name for the network
+adapter being <code>eth2</code> instead of <code>eth1</code>. Vagrant uses <code>eth1</code> in the host-only network interface
+defined in the <code>/etc/network/interfaces</code> file. Since <code>eth1</code> network interface doesn't
+exist (it is <code>eth2</code>) our host-only network does not work.</p>
+
+<!-- more -->
+
+
+<h2>The Cause</h2>
+
+<p>Ubuntu uses <a href="http://wiki.debian.org/udev">udev</a> to dynamically set device names (<code>eth1</code> for example).
+Ubuntu stores persistent udev rules for network devices in the
+<code>/etc/udev/rules.d/70-persistent-net.rules</code> file. Below is the <code>70-persistent-net.rules</code> file from
+the broken host-only network VM.</p>
+
+<p>``` bash /etc/udev/rules.d/70-persistent-net.rules</p>
+
+<h1>PCI device 0x8086:0x100e (e1000)</h1>
+
+<p>SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?<em>", ATTR{address}=="08:00:27:57:fd:7b", ATTR{dev_id}=="0x0", ATTR{type}=="1", KERNEL=="eth</em>", NAME="eth0"</p>
+
+<h1>PCI device 0x8086:0x100e (e1000)</h1>
+
+<p>SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?<em>", ATTR{address}=="08:00:27:53:22:32", ATTR{dev_id}=="0x0", ATTR{type}=="1", KERNEL=="eth</em>", NAME="eth1"
+```</p>
+
+<p>You can see there exists a rule for <code>eth1</code>. The reason the host-only network adapater is assigned
+<code>eth2</code> instead of <code>eth1</code> is because it's MAC address doesn't match the udev rule. The reason the MAC
+address doesn't match is because when Vagrant creates a new VM (from the box file) VirtualBox by
+default generates a random MAC address for that network adapter.</p>
+
+<h2>The Solution</h2>
+
+<p>The solution is to remove the persitant network udev rules immediately before you package the box
+file. This allows network adapters to be assigned device names without any MAC address issues.</p>
+
+<h4>Packaging Steps</h4>
+
+<ol>
+<li><p>SSH into running VM and remove the persistant network udev rules file:</p>
+
+<p> <code>sudo rm /etc/udev/rules.d/70-persistent-net.rules</code></p></li>
+<li><p>Shutdown the VM and package it:</p>
+
+<p> <code>vagrant halt &amp;&amp; vagrant package</code></p></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+</feed>
