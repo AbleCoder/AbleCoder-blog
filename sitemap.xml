@@ -1,25 +1,29 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://ablecoder.com/b/2012/03/24/the-reason-i-blog-future-me/</loc>
-        <lastmod>2014-03-15T01:04:11-07:00</lastmod>
+        <loc>http://able.cd/b/2012/03/24/the-reason-i-blog-future-me/</loc>
+        <lastmod>2014-03-15T02:29:34-07:00</lastmod>
     </url>
     <url>
         <loc>
-            http://ablecoder.com/b/2012/04/09/vagrant-broken-networking-when-packaging-ubuntu-boxes/
+            http://able.cd/b/2012/04/09/vagrant-broken-networking-when-packaging-ubuntu-boxes/
         </loc>
-        <lastmod>2014-03-15T01:04:11-07:00</lastmod>
+        <lastmod>2014-03-15T02:29:34-07:00</lastmod>
     </url>
     <url>
-        <loc>http://ablecoder.com/b/2012/05/28/rename-google-drive-default-folder/</loc>
-        <lastmod>2014-03-15T01:04:11-07:00</lastmod>
+        <loc>http://able.cd/b/2012/05/28/rename-google-drive-default-folder/</loc>
+        <lastmod>2014-03-15T02:29:34-07:00</lastmod>
     </url>
     <url>
-        <loc>http://ablecoder.com/blog/archives/</loc>
-        <lastmod>2014-03-15T01:04:11-07:00</lastmod>
+        <loc>http://able.cd/blog/archives/</loc>
+        <lastmod>2014-03-15T02:29:34-07:00</lastmod>
     </url>
     <url>
-        <loc>http://ablecoder.com/</loc>
-        <lastmod>2014-03-15T01:04:11-07:00</lastmod>
+        <loc>http://able.cd/</loc>
+        <lastmod>2014-03-15T02:29:34-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://able.cd/robots.txt</loc>
+        <lastmod>2014-03-15T02:29:34-07:00</lastmod>
     </url>
 </urlset>

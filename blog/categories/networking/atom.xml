@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Networking | AbleCoder]]></title>
-  <link href="http://ablecoder.com/blog/categories/networking/atom.xml" rel="self"/>
-  <link href="http://ablecoder.com/"/>
-  <updated>2014-03-15T01:04:12-07:00</updated>
-  <id>http://ablecoder.com/</id>
+  <link href="http://able.cd/blog/categories/networking/atom.xml" rel="self"/>
+  <link href="http://able.cd/"/>
+  <updated>2014-04-27T15:58:38-07:00</updated>
+  <id>http://able.cd/</id>
   <author>
     <name><![CDATA[Brandon Orther]]></name>
     
@@ -15,16 +15,16 @@
   
   <entry>
     <title type="html"><![CDATA[Vagrant: Broken Networking When Packaging Ubuntu Boxes]]></title>
-    <link href="http://ablecoder.com/b/2012/04/09/vagrant-broken-networking-when-packaging-ubuntu-boxes/"/>
+    <link href="http://able.cd/b/2012/04/09/vagrant-broken-networking-when-packaging-ubuntu-boxes/"/>
     <updated>2012-04-09T18:25:00-07:00</updated>
-    <id>http://ablecoder.com/b/2012/04/09/vagrant-broken-networking-when-packaging-ubuntu-boxes</id>
+    <id>http://able.cd/b/2012/04/09/vagrant-broken-networking-when-packaging-ubuntu-boxes</id>
     <content type="html"><![CDATA[<p>When packaging my <a href="http://vagrantup.com/">Vagrant</a> virtual environment (Ubuntu server with a host-only
 network) to a box file I ran into a problem. The issue was that when I tried to use that box file the
 host-only network would not work.</p>
 
 <p>With a little investigating I realized the problem was caused by the device name for the network
 adapter being <code>eth2</code> instead of <code>eth1</code>. Vagrant uses <code>eth1</code> in the host-only network interface
-defined in the <code>/etc/network/interfaces</code> file. Since <code>eth1</code> network interface doesn't
+defined in the <code>/etc/network/interfaces</code> file. Since <code>eth1</code> network interface doesn&rsquo;t
 exist (it is <code>eth2</code>) our host-only network does not work.</p>
 
 <!-- more -->
@@ -41,16 +41,16 @@ the broken host-only network VM.</p>
 
 <h1>PCI device 0x8086:0x100e (e1000)</h1>
 
-<p>SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?<em>", ATTR{address}=="08:00:27:57:fd:7b", ATTR{dev_id}=="0x0", ATTR{type}=="1", KERNEL=="eth</em>", NAME="eth0"</p>
+<p>SUBSYSTEM==&ldquo;net&rdquo;, ACTION==&ldquo;add&rdquo;, DRIVERS==&ldquo;?<em>&rdquo;, ATTR{address}==&ldquo;08:00:27:57:fd:7b&rdquo;, ATTR{dev_id}==&ldquo;0x0&rdquo;, ATTR{type}==&ldquo;1&rdquo;, KERNEL==&ldquo;eth</em>&rdquo;, NAME=&ldquo;eth0&rdquo;</p>
 
 <h1>PCI device 0x8086:0x100e (e1000)</h1>
 
-<p>SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?<em>", ATTR{address}=="08:00:27:53:22:32", ATTR{dev_id}=="0x0", ATTR{type}=="1", KERNEL=="eth</em>", NAME="eth1"
+<p>SUBSYSTEM==&ldquo;net&rdquo;, ACTION==&ldquo;add&rdquo;, DRIVERS==&ldquo;?<em>&rdquo;, ATTR{address}==&ldquo;08:00:27:53:22:32&rdquo;, ATTR{dev_id}==&ldquo;0x0&rdquo;, ATTR{type}==&ldquo;1&rdquo;, KERNEL==&ldquo;eth</em>&rdquo;, NAME=&ldquo;eth1&rdquo;
 ```</p>
 
 <p>You can see there exists a rule for <code>eth1</code>. The reason the host-only network adapater is assigned
-<code>eth2</code> instead of <code>eth1</code> is because it's MAC address doesn't match the udev rule. The reason the MAC
-address doesn't match is because when Vagrant creates a new VM (from the box file) VirtualBox by
+<code>eth2</code> instead of <code>eth1</code> is because it&rsquo;s MAC address doesn&rsquo;t match the udev rule. The reason the MAC
+address doesn&rsquo;t match is because when Vagrant creates a new VM (from the box file) VirtualBox by
 default generates a random MAC address for that network adapter.</p>
 
 <h2>The Solution</h2>
